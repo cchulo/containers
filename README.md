@@ -5,7 +5,9 @@ Personal collection of build containers for setting up cross-compile toolchains.
 
 ## Requirements:
 - podman
-- nvidia-container-toolkit (optional, if running nvidia and would like to render to host from the container)
+- [nvidia-container-toolkit](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/install-guide.html)
+  - optional, if running nvidia and would like to render to host from the container
+  - recommended to install using your distro's package manager if available or AUR
 
 
 ## GPU-accelerated containers with host-rendering
