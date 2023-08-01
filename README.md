@@ -21,25 +21,25 @@ You may have to execute `xhost +local:` in case you run into permission errors
 ### Build:
 ```bash
 podman build \
-   -t glxgears-test-linux-x64 \
-   -f glxgears-test-linux-x64.Dockerfile
+  -t glxgears-test \
+  -f glxgears-test.ubuntu-20.04-linux-x64.Dockerfile
 ```
 
 ### Test OpenGL:
 ```bash
 podman run -it --rm \
-   --device nvidia.com/gpu=0 \
-   -e DISPLAY \
-   -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
-   glxgears-test.ubuntu-20.04-linux-x64:latest "glxgears"
+  --device nvidia.com/gpu=0 \
+  -e DISPLAY \
+  -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+  glxgears-test:latest "glxgears"
 ```
 
 ### Test Vulkan:
 ```bash
 podman run -it --rm \
-   --device nvidia.com/gpu=0 \
-   -e DISPLAY \
-   -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
-   glxgears-test.ubuntu-20.04-linux-x64:latest "vkcube"
+  --device nvidia.com/gpu=0 \
+  -e DISPLAY \
+  -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+  glxgears-test:latest "vkcube"
 ```
 
