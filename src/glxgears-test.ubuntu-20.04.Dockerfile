@@ -1,4 +1,5 @@
-FROM --platform=linux/amd64 ubuntu:20.04
+ARG ARCH=amd64
+FROM --platform=${ARCH} ubuntu:20.04
 
 ENV HOME=/wd
 
@@ -9,4 +10,3 @@ RUN apt update \
     && apt clean 
 
 ENTRYPOINT [ "/bin/bash", "-l", "-c" ]
-
