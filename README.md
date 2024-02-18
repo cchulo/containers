@@ -22,7 +22,7 @@ You may have to execute `xhost +local:` in case you run into permission errors
 ```bash
 podman build \
   -t glxgears-test \
-  -f glxgears-test.ubuntu-20.04-linux-x64.Dockerfile
+  -f src/glxgears-test.dockerfile
 ```
 
 ### Test OpenGL:
