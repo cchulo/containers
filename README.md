@@ -43,3 +43,28 @@ podman run -it --rm \
   glxgears-test:latest "vkcube"
 ```
 
+### Note regarding selinux
+In addition to these steps, you may need to disable selinux label
+so that the runtime socket can be properly mounted:
+
+```bash
+podman run -it --rm \
+  --security-opt label=disable \
+  --device nvidia.com/gpu=0 \
+  -e DISPLAY \
+  -v /tmp/.X11-unix:/tmp/.X11-unix:ro \
+  glxgears-test:latest "glxgears"
+```
+
+### On AMD/Intel
+Specify `--device` like:
+
+```bash
+podman run -it --rm \
+  --security-opt label=disable \
+  --device /dev/dri \
+  -e DISPLAY \
+  -v /tmp/.X11-unix:/tmp/.X11-unix \
+  glxgears-test:latest "vkcube"
+```
+*note that vulkan may fallback to lavapipe if the image does not support latest vulkan drivers

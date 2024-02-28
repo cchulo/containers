@@ -1,5 +1,5 @@
 ARG ARCH=amd64
-FROM --platform=${ARCH} ubuntu:20.04
+FROM --platform=${ARCH} ubuntu:22.04
 
 ENV HOME=/wd
 RUN mkdir /wd && touch /wd/.bashrc
