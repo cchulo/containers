@@ -68,3 +68,18 @@ podman run -it --rm \
   glxgears-test:latest "vkcube"
 ```
 *note that vulkan may fallback to lavapipe if the image does not support latest vulkan drivers
+
+## Web dev containers
+
+example:
+
+```bash
+podman run -itd \
+--entrypoint /bin/bash \
+-p 3000:3000 \
+--name astro_dev \
+-v /path/to/project:/src:z \
+-w /src \
+webdev:latest
+```
+where port 3000 on the host is mapped to the container port
