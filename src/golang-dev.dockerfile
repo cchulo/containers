@@ -12,6 +12,7 @@ RUN mkdir -p /wd \
         sudo \
         curl \
         golang-go \
+        git \
     && apt clean
 
 WORKDIR $GOPATH
